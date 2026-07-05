@@ -3702,7 +3702,7 @@ impl<'a> Parser<'a> {
             && self.look_ahead(1, |t| {
                 *t == token::OpenBrace
                     || t.is_metavar_block()
-                    || t.kind == TokenKind::Ident(sym::bikeshed, IdentIsRaw::No)
+                    || t.can_begin_type()
             })
             && self.token_uninterpolated_span().at_least_rust_2018()
     }
