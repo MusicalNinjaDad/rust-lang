@@ -3672,7 +3672,7 @@ impl<'a> Parser<'a> {
     /// Parses a `try {...}` or `try bikeshed Ty {...}` expression (`try` token already eaten).
     fn parse_try_block(&mut self, span_lo: Span) -> PResult<'a, Box<Expr>> {
         let annotation =
-            if self.eat_keyword(exp!(Bikeshed)) { Some(self.parse_ty()?) } else { None };
+            if self.token.can_begin_type() { Some(self.parse_ty()?) } else { None };
 
         let (attrs, body) = self.parse_inner_attrs_and_block(None)?;
         if self.eat_keyword(exp!(Catch)) {
