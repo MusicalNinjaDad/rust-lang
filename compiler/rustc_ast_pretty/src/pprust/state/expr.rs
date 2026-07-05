@@ -848,7 +848,6 @@ impl<'a> State<'a> {
                 let ib = self.ibox(0);
                 self.word_nbsp("try");
                 if let Some(ty) = opt_ty {
-                    self.word_nbsp("bikeshed");
                     self.print_type(ty);
                     self.space();
                 }
