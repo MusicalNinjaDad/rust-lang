@@ -3,4 +3,4 @@
 
 #![feature(try_blocks, try_blocks_heterogeneous)]
 
-fn main() { try { Some(1)? }; try bikeshed Result<u32, ()> { 3 }; }
+fn main() { try { Some(1)? }; try Result<u32, ()> { 3 }; }

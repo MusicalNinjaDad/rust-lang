@@ -225,8 +225,8 @@ mod expressions {
     fn expr_try_block() {
         try {}
         try { return; }
-        try bikeshed Option<_> {}
-        try bikeshed Option<String> { None? }
+        try Option<_> {}
+        try Option<String> { None? }
     }
 
     /// ExprKind::Assign

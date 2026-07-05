@@ -2285,7 +2285,7 @@ async fn main() {
     let z: core::ops::ControlFlow<(), _> = try { () };
     let w = const { 92 };
     let t = 'a: { 92 };
-    let u = try bikeshed core::ops::ControlFlow<(), _> { () };
+    let u = try core::ops::ControlFlow<(), _> { () };
 }
         "#,
         expect![[r#"

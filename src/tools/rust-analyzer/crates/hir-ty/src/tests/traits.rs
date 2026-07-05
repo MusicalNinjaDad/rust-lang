@@ -246,7 +246,7 @@ fn test() {
       //^ Option<()>
     let homogeneous = try { Ok::<(), u32>(())?; "hi" };
       //^^^^^^^^^^^ Result<&'? str, u32>
-    let heterogeneous = try bikeshed Result<_, u64> { 1 };
+    let heterogeneous = try Result<_, u64> { 1 };
       //^^^^^^^^^^^^^ Result<i32, u64>
 }
 "#,

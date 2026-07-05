@@ -8,11 +8,11 @@ fn foo() -> Result<(), u16> { Ok(()) }
 fn bar() -> Result<(), u32> { Ok(()) }
 
 fn whatever() -> Result<(), String> {
-    try bikeshed _ {}
+    try _ {}
 }
 
 fn main() {
-    try bikeshed Result<(), u64> {
+    try Result<(), u64> {
         foo()?;
         bar()?;
     };

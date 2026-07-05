@@ -1,7 +1,7 @@
 //@ edition: 2018
 
 pub fn main() {
-    let try_result = try bikeshed Option<_> { //~ ERROR `try bikeshed` expression is experimental
+    let try_result = try Option<_> { //~ ERROR `try` expression is experimental
         let x = 5;
         x
     };
@@ -11,6 +11,6 @@ pub fn main() {
     // See <https://github.com/rust-lang/rust/issues/152501>
 
     #[cfg(false)]
-    try bikeshed () {}
-    //~^ error `try bikeshed` expression is experimental
+    try () {}
+    //~^ error `try` expression is experimental
 }

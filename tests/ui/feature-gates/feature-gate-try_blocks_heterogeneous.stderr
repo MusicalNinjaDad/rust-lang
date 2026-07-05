@@ -1,7 +1,7 @@
-error[E0658]: `try bikeshed` expression is experimental
+error[E0658]: `try` expression is experimental
   --> $DIR/feature-gate-try_blocks_heterogeneous.rs:4:22
    |
-LL |       let try_result = try bikeshed Option<_> {
+LL |       let try_result = try Option<_> {
    |  ______________________^
 LL | |         let x = 5;
 LL | |         x
@@ -12,10 +12,10 @@ LL | |     };
    = help: add `#![feature(try_blocks_heterogeneous)]` to the crate attributes to enable
    = note: this compiler was built on YYYY-MM-DD; consider upgrading it if it is out of date
 
-error[E0658]: `try bikeshed` expression is experimental
+error[E0658]: `try` expression is experimental
   --> $DIR/feature-gate-try_blocks_heterogeneous.rs:14:5
    |
-LL |     try bikeshed () {}
+LL |     try () {}
    |     ^^^^^^^^^^^^^^^^^^
    |
    = note: see issue #149488 <https://github.com/rust-lang/rust/issues/149488> for more information
