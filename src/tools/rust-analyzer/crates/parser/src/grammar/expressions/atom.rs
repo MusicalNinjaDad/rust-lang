@@ -1,4 +1,4 @@
-use crate::grammar::types::type_;
+use crate::grammar::types::{TYPE_FIRST, type_};
 
 use super::*;
 
@@ -997,14 +997,14 @@ fn break_expr(p: &mut Parser<'_>, r: Restrictions) -> CompletedMarker {
 // test try_block_expr
 // fn foo() {
 //     let _ = try {};
-//     let _ = try bikeshed T<U> {};
+//     let _ = try T<U> {};
 // }
 fn try_block_expr(p: &mut Parser<'_>, m: Option<Marker>) -> CompletedMarker {
     assert!(p.at(T![try]));
     let m = m.unwrap_or_else(|| p.start());
     let try_modifier = p.start();
     p.bump(T![try]);
-    if p.eat_contextual_kw(T![bikeshed]) {
+    if p.at_ts(TYPE_FIRST) {
         type_(p);
     }
     try_modifier.complete(p, TRY_BLOCK_MODIFIER);

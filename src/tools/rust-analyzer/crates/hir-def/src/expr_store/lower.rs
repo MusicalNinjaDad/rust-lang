@@ -499,7 +499,7 @@ enum Awaitable {
 enum TryBlock {
     // `try { ... }`
     Homogeneous { label: LabelId },
-    // `try bikeshed Ty { ... }`
+    // `try TargetType { ... }`
     Heterogeneous { label: LabelId },
 }
 
@@ -1259,7 +1259,7 @@ impl<'db> ExprCollector<'db> {
                 self.alloc_expr(Expr::Let { pat, expr }, syntax_ptr)
             }
             ast::Expr::BlockExpr(e) => match e.modifier() {
-                Some(ast::BlockModifier::Try { try_token: _, bikeshed_token: _, result_type }) => {
+                Some(ast::BlockModifier::Try { try_token: _, result_type }) => {
                     self.desugar_try_block(e, result_type)
                 }
                 Some(ast::BlockModifier::Unsafe(_)) => {
@@ -2247,7 +2247,7 @@ impl<'db> ExprCollector<'db> {
     ///     ControlFlow::Break(residual) =>
     ///         // If there is an enclosing `try {...}`:
     ///         break 'catch_target Residual::into_try_type(residual),
-    ///         // If there is an enclosing `try bikeshed Ty {...}`:
+    ///         // If there is an enclosing `try TargetType { ... }`:
     ///         break 'catch_target Try::from_residual(residual),
     ///         // Otherwise:
     ///         return Try::from_residual(residual),

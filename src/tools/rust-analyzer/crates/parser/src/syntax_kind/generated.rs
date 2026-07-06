@@ -114,7 +114,6 @@ pub enum SyntaxKind {
     ATT_SYNTAX_KW,
     AUTO_KW,
     AWAIT_KW,
-    BIKESHED_KW,
     BUILTIN_KW,
     CFG_ATTR_KW,
     CFG_KW,
@@ -634,7 +633,6 @@ impl SyntaxKind {
             ASM_KW => "asm",
             ATT_SYNTAX_KW => "att_syntax",
             AUTO_KW => "auto",
-            BIKESHED_KW => "bikeshed",
             BUILTIN_KW => "builtin",
             CFG_KW => "cfg",
             CFG_ATTR_KW => "cfg_attr",
@@ -744,7 +742,6 @@ impl SyntaxKind {
             ASM_KW => true,
             ATT_SYNTAX_KW => true,
             AUTO_KW => true,
-            BIKESHED_KW => true,
             BUILTIN_KW => true,
             CFG_KW => true,
             CFG_ATTR_KW => true,
@@ -842,7 +839,6 @@ impl SyntaxKind {
             ASM_KW => true,
             ATT_SYNTAX_KW => true,
             AUTO_KW => true,
-            BIKESHED_KW => true,
             BUILTIN_KW => true,
             CFG_KW => true,
             CFG_ATTR_KW => true,
@@ -1003,7 +999,6 @@ impl SyntaxKind {
             "asm" => ASM_KW,
             "att_syntax" => ATT_SYNTAX_KW,
             "auto" => AUTO_KW,
-            "bikeshed" => BIKESHED_KW,
             "builtin" => BUILTIN_KW,
             "cfg" => CFG_KW,
             "cfg_attr" => CFG_ATTR_KW,
@@ -1182,7 +1177,6 @@ macro_rules ! T_ {
     [asm] => { $ crate :: SyntaxKind :: ASM_KW };
     [att_syntax] => { $ crate :: SyntaxKind :: ATT_SYNTAX_KW };
     [auto] => { $ crate :: SyntaxKind :: AUTO_KW };
-    [bikeshed] => { $ crate :: SyntaxKind :: BIKESHED_KW };
     [builtin] => { $ crate :: SyntaxKind :: BUILTIN_KW };
     [cfg] => { $ crate :: SyntaxKind :: CFG_KW };
     [cfg_attr] => { $ crate :: SyntaxKind :: CFG_ATTR_KW };

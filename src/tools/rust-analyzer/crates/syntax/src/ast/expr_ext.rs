@@ -377,7 +377,6 @@ pub enum BlockModifier {
     Unsafe(SyntaxToken),
     Try {
         try_token: SyntaxToken,
-        bikeshed_token: Option<SyntaxToken>,
         result_type: Option<ast::Type>,
     },
     Const(SyntaxToken),
@@ -401,9 +400,8 @@ impl ast::BlockExpr {
             .or_else(|| {
                 let modifier = self.try_block_modifier()?;
                 let try_token = modifier.try_token()?;
-                let bikeshed_token = modifier.bikeshed_token();
                 let result_type = modifier.ty();
-                Some(BlockModifier::Try { try_token, bikeshed_token, result_type })
+                Some(BlockModifier::Try { try_token, result_type })
             })
             .or_else(|| self.const_token().map(BlockModifier::Const))
             .or_else(|| self.label().map(BlockModifier::Label))

@@ -523,7 +523,7 @@ TryExpr =
   Attr* Expr '?'
 
 TryBlockModifier =
-  'try' ('bikeshed' Type)?
+  'try' (Type)?
 
 BlockExpr =
   Attr* Label? (TryBlockModifier | 'unsafe' | ('async' 'move'?) | ('gen' 'move'?) | 'const') StmtList

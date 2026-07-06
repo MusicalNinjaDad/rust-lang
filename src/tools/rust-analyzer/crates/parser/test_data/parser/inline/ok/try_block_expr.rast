@@ -41,8 +41,6 @@ SOURCE_FILE
             TRY_BLOCK_MODIFIER
               TRY_KW "try"
               WHITESPACE " "
-              BIKESHED_KW "bikeshed"
-              WHITESPACE " "
               PATH_TYPE
                 PATH
                   PATH_SEGMENT

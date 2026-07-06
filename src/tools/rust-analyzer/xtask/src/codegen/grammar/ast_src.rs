@@ -120,7 +120,6 @@ const CONTEXTUAL_KEYWORDS: &[&str] = &[
     "auto",
     "yeet",
     "safe",
-    "bikeshed",
     "cfg_attr",
     "cfg",
     "null",

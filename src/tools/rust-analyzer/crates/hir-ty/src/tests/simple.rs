@@ -2289,7 +2289,7 @@ async fn main() {
 }
         "#,
         expect![[r#"
-            16..256 '{     ...) }; }': ()
+            16..247 '{     ...) }; }': ()
             26..27 'x': i32
             30..43 'unsafe { 92 }': i32
             39..41 '92': i32
@@ -2311,12 +2311,12 @@ async fn main() {
             180..190 ''a: { 92 }': i32
             186..188 '92': i32
             200..201 'u': ControlFlow<(), ()>
-            204..253 'try bi...{ () }': ControlFlow<(), ()>
-            204..253 'try bi...{ () }': fn from_output<ControlFlow<(), ()>>(<ControlFlow<(), ()> as Try>::Output) -> ControlFlow<(), ()>
-            204..253 'try bi...{ () }': ControlFlow<(), ()>
-            204..253 'try bi...{ () }': ControlFlow<(), ()>
-            204..253 'try bi...{ () }': ControlFlow<(), ()>
-            249..251 '()': ()
+            204..244 'try co...{ () }': ControlFlow<(), ()>
+            204..244 'try co...{ () }': fn from_output<ControlFlow<(), ()>>(<ControlFlow<(), ()> as Try>::Output) -> ControlFlow<(), ()>
+            204..244 'try co...{ () }': ControlFlow<(), ()>
+            204..244 'try co...{ () }': ControlFlow<(), ()>
+            204..244 'try co...{ () }': ControlFlow<(), ()>
+            240..242 '()': ()
         "#]],
     )
 }

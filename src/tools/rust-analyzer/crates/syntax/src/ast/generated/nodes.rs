@@ -1793,10 +1793,6 @@ impl TryBlockModifier {
     #[inline]
     pub fn ty(&self) -> Option<Type> { support::child(&self.syntax) }
     #[inline]
-    pub fn bikeshed_token(&self) -> Option<SyntaxToken> {
-        support::token(&self.syntax, T![bikeshed])
-    }
-    #[inline]
     pub fn try_token(&self) -> Option<SyntaxToken> { support::token(&self.syntax, T![try]) }
 }
 pub struct TryExpr {
