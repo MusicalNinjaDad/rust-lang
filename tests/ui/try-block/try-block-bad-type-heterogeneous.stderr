@@ -19,24 +19,24 @@ LL |         ""
    |         ^^ expected `&str`, found `i32`
 
 error[E0271]: type mismatch resolving `<Result<i32, i32> as Try>::Output == ()`
-  --> $DIR/try-block-bad-type-heterogeneous.rs:15:47
+  --> $DIR/try-block-bad-type-heterogeneous.rs:15:38
    |
 LL |     let res = try Result<i32, i32> { };
-   |                                               ^ expected `()`, found `i32`
+   |                                      ^ expected `()`, found `i32`
 
 error[E0277]: a `try` block must return `Result` or `Option` (or another type that implements `Try`)
-  --> $DIR/try-block-bad-type-heterogeneous.rs:17:33
+  --> $DIR/try-block-bad-type-heterogeneous.rs:17:24
    |
 LL |     let res = try () { };
-   |                                 ^ could not wrap the final value of the block as `()` doesn't implement `Try`
+   |                        ^ could not wrap the final value of the block as `()` doesn't implement `Try`
    |
    = help: the nightly-only, unstable trait `Try` is not implemented for `()`
 
 error[E0277]: a `try` block must return `Result` or `Option` (or another type that implements `Try`)
-  --> $DIR/try-block-bad-type-heterogeneous.rs:20:34
+  --> $DIR/try-block-bad-type-heterogeneous.rs:20:25
    |
 LL |     let res = try i32 { 5 };
-   |                                  ^ could not wrap the final value of the block as `i32` doesn't implement `Try`
+   |                         ^ could not wrap the final value of the block as `i32` doesn't implement `Try`
    |
    = help: the nightly-only, unstable trait `Try` is not implemented for `i32`
 
