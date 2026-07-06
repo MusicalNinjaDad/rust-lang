@@ -3669,7 +3669,7 @@ impl<'a> Parser<'a> {
         self.token.is_keyword(kw::Builtin) && self.look_ahead(1, |t| *t == token::Pound)
     }
 
-    /// Parses a `try {...}` or `try bikeshed Ty {...}` expression (`try` token already eaten).
+    /// Parses a `try {...}` or `try TargetType {...}` expression (`try` token already eaten).
     fn parse_try_block(&mut self, span_lo: Span) -> PResult<'a, Box<Expr>> {
         let annotation = if self.token.can_begin_type() { Some(self.parse_ty()?) } else { None };
 

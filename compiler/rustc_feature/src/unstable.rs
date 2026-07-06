@@ -754,7 +754,7 @@ declare_features! (
     (unstable, trivial_bounds, "1.28.0", Some(48214)),
     /// Allows using `try {...}` expressions.
     (unstable, try_blocks, "1.29.0", Some(154391)),
-    /// Allows using `try bikeshed TargetType {...}` expressions.
+    /// Allows using `try TargetType {...}` expressions.
     (unstable, try_blocks_heterogeneous, "1.94.0", Some(149488)),
     /// Allows `impl Trait` to be used inside type aliases (RFC 2515).
     (unstable, type_alias_impl_trait, "1.38.0", Some(63063)),

@@ -1,7 +1,7 @@
 //@ edition: 2018
 
 pub fn main() {
-    let try_result = try Option<_> { //~ ERROR `try` expression is experimental
+    let try_result = try Option<_> { //~ ERROR try TargetType { ... }` blocks are experimental
         let x = 5;
         x
     };
@@ -12,5 +12,5 @@ pub fn main() {
 
     #[cfg(false)]
     try () {}
-    //~^ error `try` expression is experimental
+    //~^ error try TargetType { ... }` blocks are experimental
 }

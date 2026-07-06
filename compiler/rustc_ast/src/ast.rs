@@ -1821,12 +1821,7 @@ pub enum ExprKind {
     Use(Box<Expr>, Span),
 
     /// A try block (`try { ... }`), if the type is `None`, or
-    /// A try block (`try bikeshed Ty { ... }`) if the type is `Some`.
-    ///
-    /// Note that `try bikeshed` is a *deliberately ridiculous* placeholder
-    /// syntax to avoid deciding what keyword or symbol should go there.
-    /// It's that way for experimentation only; an RFC to decide the final
-    /// semantics and syntax would be needed to put it on stabilization-track.
+    /// A type-annotated try block (`try TargetType { ... }`) if the type is `Some`.
     TryBlock(Box<Block>, Option<Box<Ty>>),
 
     /// An assignment (`a = foo()`).

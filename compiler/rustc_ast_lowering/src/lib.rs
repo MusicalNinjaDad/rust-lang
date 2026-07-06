@@ -452,7 +452,7 @@ enum TryBlockScope {
     /// We're inside a `try { … }` block, so a `?` will block-break
     /// from that block using a type depending only on the argument.
     Homogeneous(HirId),
-    /// We're inside a `try as _ { … }` block, so a `?` will block-break
+    /// We're inside a `try TargetType { ... }` block, so a `?` will block-break
     /// from that block using the type specified.
     Heterogeneous(HirId),
 }
