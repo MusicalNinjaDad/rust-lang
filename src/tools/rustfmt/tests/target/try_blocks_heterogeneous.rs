@@ -19,7 +19,6 @@ fn baz() -> Option<i32> {
 
     let y = try Option<i32> { 6 }; // comment
 
-    let x = try /* Invisible comment */ bikeshed Option<()> {};
     let x = try /* Invisible comment */ Option<()> {};
     let x = try Option<()> /* Invisible comment */ {};
 
@@ -30,12 +29,12 @@ fn baz() -> Option<i32> {
         7
     };
 
-    let x = try Foo<Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar> {
+    let x = try Foo<Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar> {
         1 + 1 + 1
     };
 
     let x =
-        try Foo<Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar> {};
+        try Foo<Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar, Bar> {};
 
     let x = try Result<
         VeryVeryVeryVeryVeryLongTypeForSuccess,

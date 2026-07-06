@@ -425,7 +425,7 @@ pub(crate) fn format_expr(
             }
         }
         ast::ExprKind::TryBlock(ref block, Some(ref ty)) => {
-            let keyword = "try bikeshed ";
+            let keyword = "try ";
             // 2 = " {".len()
             let ty_shape = shape
                 .shrink_left(keyword.len(), expr.span)
